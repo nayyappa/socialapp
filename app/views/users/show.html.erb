@@ -17,3 +17,36 @@
 </div>
 </div>
 </div>
+<div class="container">
+<div class="row">
+
+<div class="col-md-3">
+<div class="panel panel-default">
+<div class="panel-heading">
+Friends(<%= @user.active_friends.size %>)
+</div>
+<div class="panel-body">
+<% @user.active_friends.last(16).each do |user| %>
+<%= link_to user_path(user.username) do %>
+<%= gravatar_tag user.email, size: 50 %><br/>
+<small><%= user.username %></small>
+<% end %>
+<% end %>
+</div>
+</div> 
+</div>
+
+<div class="col-md-6">
+</div>
+
+<div class="col-md-3">
+<div class="panel panel-default">
+<div class="panel-heading">Recent Activity</div>
+<div class="panel-body">
+	<%= render_activities(@activities) %>
+</div>
+</div>
+</div>
+
+</div>
+</div>

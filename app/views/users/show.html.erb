@@ -34,8 +34,7 @@
 
 	<% @user.active_friends.last(16).each do |user| %>
 	<%= link_to user_path(user.username) do %>
-		<%= gravatar_tag user.email, size: 40 %><br/>
-		<%= user.username %>
+		<%= gravatar_tag user.email, size: 40 %><%= user.username %>
 	<% end %>
 	<% end %>
 
